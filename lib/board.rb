@@ -2,16 +2,15 @@
 class Board
   attr_reader :board
   def initialize
-    @board = [
-      ["A","B","C","D","E","F","G"], #0
-      [".",".",".",".",".",".","."], #1 Top row
-      [".",".",".",".",".",".","."], #2
-      [".",".",".",".",".",".","."],  #3
-      [".",".",".",".",".",".","."], #4
-      [".",".",".",".",".",".","."], #5
-      [".",".",".",".",".",".","."]  #6 Bottom row
-    ]
-
+    @board = {
+      A: [".",".",".",".",".","."],
+      B: [".",".",".",".",".","."],
+      C: [".",".",".",".",".","."],
+      D: [".",".",".",".",".","."],
+      E: [".",".",".",".",".","."],
+      F: [".",".",".",".",".","."],
+      G: [".",".",".",".",".","."]
+    }
   end
 
   def welcome_message
@@ -19,11 +18,16 @@ class Board
   end
 
   def generate_board
-  board.each do |row|
-    row.each do|colomn|
-       colomn.to_s + " "
+    print_key = ""
+      board.each_key do |key|
+        print_key <<  key.to_s
       end
-      puts row.join("")
+       puts print_key
+      6.times do |index|
+        board.each_key do |value|
+      print board[value][index]
+    end
+      puts " "
     end
   end
 end
