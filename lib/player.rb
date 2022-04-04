@@ -42,8 +42,9 @@ class Player
     choice = keys.sample
     row = @board.board[choice.to_sym]
 
-    if !row.include?(".")
+    until row.include?(".")
       row = @board.board[choice.to_sym]
+      choice = keys.sample
     end
 
     if row.last != "."
