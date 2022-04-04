@@ -1,6 +1,5 @@
-
 class Board
-  attr_reader :board
+  attr_reader :board, :welcome_message, :generate_board
   def initialize
     @board = {
       A: [".",".",".",".",".","."],
@@ -12,11 +11,9 @@ class Board
       G: [".",".",".",".",".","."]
     }
   end
-
   def welcome_message
-    puts "Welcome to Connect Four!"
+    return "Welcome to Connect Four!"
   end
-
   def generate_board
     print_key = ""
       board.each_key do |key|
@@ -31,7 +28,10 @@ class Board
     end
   end
 end
-
-board =  Board.new
-board.welcome_message
-board.generate_board
+  # def empty?
+  # end
+  # def full?
+  # end
+  board = Board.new
+  board.welcome_message
+  board.generate_board
