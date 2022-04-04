@@ -39,8 +39,7 @@ RSpec.describe Player do
         :F=>[".", ".", ".", ".", ".", "."],
         :G=>[".", ".", ".", ".", ".", "."]
        })
-     end
-
+    end 
     it "selects colomn with existing selection" do
       player = Player.new
       player.human_player("A")
