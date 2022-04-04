@@ -39,7 +39,12 @@ RSpec.describe Player do
         :F=>[".", ".", ".", ".", ".", "."],
         :G=>[".", ".", ".", ".", ".", "."]
        })
+<<<<<<< HEAD
     end
+=======
+     end
+
+>>>>>>> 53e56a8 (update player & player spec)
     it "selects colomn with existing selection" do
       player = Player.new
       player.human_player("A")
