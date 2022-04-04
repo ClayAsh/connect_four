@@ -84,6 +84,9 @@ RSpec.describe Player do
       })
 
     expect(player.human_player("A")).to eq(player.board)
+    # This test is returning "Row Full, Please try again" and puting us
+    # in vim land, so I know the invalid selection functionality is
+    #working but I'm unsure how to test for it.
   end
 
 
@@ -171,16 +174,15 @@ RSpec.describe Player do
 
         player.computer_player
 
-      expect(player.board.board.values.join.include?("O")).to be(true)
-      # expect(player.computer_player).to eq({
-      #   :A=>["X", "X", "X", "X", "X", "X"],
-      #   :B=>["X", "X", "X", "X", "X", "X"],
-      #   :C=>["X", "X", "X", "X", "X", "X"],
-      #   :D=>["X", "X", "X", "X", "X", "X"],
-      #   :E=>["X", "X", "X", "X", "X", "X"],
-      #   :F=>["X", "X", "X", "X", "X", "X"],
-      #   :G=>["O", "X", "X", "X", "X", "X"]
-      #   })
+      expect(player.board.board).to eq({
+        :A=>["X", "X", "X", "X", "X", "X"],
+        :B=>["X", "X", "X", "X", "X", "X"],
+        :C=>["X", "X", "X", "X", "X", "X"],
+        :D=>["X", "X", "X", "X", "X", "X"],
+        :E=>["X", "X", "X", "X", "X", "X"],
+        :F=>["X", "X", "X", "X", "X", "X"],
+        :G=>["O", "X", "X", "X", "X", "X"]
+        })
     end
   end
 end
