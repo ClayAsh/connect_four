@@ -115,57 +115,67 @@ class Game
   def horizontal_winner
     row_1 = @board.board[:A][0], @board.board[:B][0], @board.board[:C][0], @board.board[:D][0], @board.board[:E][0], @board.board[:F][0], @board.board[:G][0]
     row_2 = @board.board[:A][1], @board.board[:B][1], @board.board[:C][1], @board.board[:D][1], @board.board[:E][1], @board.board[:F][1], @board.board[:G][1]
-    row_3 = @board.board[:A3], @board.board[:B3], @board.board[:C3], @board.board[:D3], @board.board[:E3], @board.board[:F3], @board.board[:G3]
-    row_4 = @board.board[:A4], @board.board[:B4], @board.board[:C4], @board.board[:D4], @board.board[:E4], @board.board[:F4], @board.board[:G4]
-    row_5 = @board.board[:A5], @board.board[:B5], @board.board[:C5], @board.board[:D5], @board.board[:E5], @board.board[:F5], @board.board[:G5]
-    row_6 = @board.board[:A6], @board.board[:B6], @board.board[:C6], @board.board[:D6], @board.board[:E6], @board.board[:F6], @board.board[:G6]
+    row_3 = @board.board[:A][2], @board.board[:B][2], @board.board[:C][2], @board.board[:D][2], @board.board[:E][2], @board.board[:F][2], @board.board[:G][2]
+    row_4 = @board.board[:A][3], @board.board[:B][3], @board.board[:C][3], @board.board[:D][3], @board.board[:E][3], @board.board[:F][3], @board.board[:G][3]
+    row_5 = @board.board[:A][4], @board.board[:B][4], @board.board[:C][4], @board.board[:D][4], @board.board[:E][4], @board.board[:F][4], @board.board[:G][4]
+    row_6 = @board.board[:A][5], @board.board[:B][5], @board.board[:C][5], @board.board[:D][5], @board.board[:E][5], @board.board[:F][5], @board.board[:G][5]
 
-    if row_1.join.include?("XXXX")
-      return "Player 1 Wins!"
+      if row_1.join.include?("XXXX")
+        return "Player 1 Wins!"
 
-    elsif row_1.join.include?("OOOO")
-      return "Aww, the Computer Wins!"
+      elsif row_1.join.include?("OOOO")
+        return "Aww, the Computer Wins!"
 
+      end
+
+      if row_2.join.include?("XXXX")
+        return "Player 1 Wins!"
+
+      elsif row_2.join.include?("OOOO")
+        return "Aww, the Computer Wins!"
+
+      end
+
+      if row_3.join.include?("XXXX")
+        return "Player 1 Wins!"
+
+      elsif row_3.join.include?("OOOO")
+        return "Aww, the Computer Wins!"
+
+      end
+
+      if row_4.join.include?("XXXX")
+        return "Player 1 Wins!"
+
+      elsif row_4.join.include?("OOOO")
+        return "Aww, the Computer Wins!"
+
+      end
+
+      if row_5.join.include?("X X X X")
+        return "Player 1 Wins!"
+
+      elsif row_5.join.include?("OOOO")
+        return "Aww, the Computer Wins!"
+
+      end
+
+      if row_6.join.include?("X X X X")
+        return "Player 1 Wins!"
+
+      elsif row_6.join.include?("OOOO")
+        return "Aww, the Computer Wins!"
     end
-
-    if row_2.join.include?("XXXX")
-      return "Player 1 Wins!"
-
-    elsif row_2.join.include?("OOOO")
-      return "Aww, the Computer Wins!"
-
-    end
-
-    if row_3.join.include?("XXXX")
-      return "Player 1 Wins!"
-
-    elsif row_3.join.include?("OOOO")
-      return "Aww, the Computer Wins!"
-
-    end
-
-    if row_4.join.include?("XXXX")
-      return "Player 1 Wins!"
-
-    elsif row_4.join.include?("OOOO")
-      return "Aww, the Computer Wins!"
-
-    end
-
-    if row_5.join.include?("X X X X")
-      return "Player 1 Wins!"
-
-    elsif row_5.join.include?("OOOO")
-      return "Aww, the Computer Wins!"
-
-    end
-
-    if row_6.join.include?("X X X X")
-      return "Player 1 Wins!"
-
-    elsif row_6.join.include?("OOOO")
-      return "Aww, the Computer Wins!"
   end
+  def diagonal_winner
+    diag_1 = @board.board[:A][0], @board.board[:B][1], @board.board[:C][2], @board.board[:D][3], @board.board[:E][4], @board.board[:F][5]
+    diag_2 = @board.board[:B][0], @board.board[:C][1], @board.board[:D][2], @board.board[:E][3], @board.board[:F][4], @board.board[:G][5]
+    diag_3 = @board.board[:C][0], @board.board[:D][1], @board.board[:E][2], @board.board[:F][3], @board.board[:G][4]
+    diag_4 = @board.board[:D][0], @board.board[:E][1], @board.board[:F][2], @board.board[:G][3]
+    diag_5 = @board.board[:D][0], @board.board[:C][1], @board.board[:B][2], @board.board[:A][3]
+    diag_6 = @board.board[:E][0], @board.board[:D][1], @board.board[:C][2], @board.board[:B][3], @board.board[:A][4]
+    diag_7 = @board.board[:F][0], @board.board[:E][1], @board.board[:D][2], @board.board[:C][3], @board.board[:B][4], @board.board[:A][4]
+    diag_8 = @board.board[]
   end
 end
 
