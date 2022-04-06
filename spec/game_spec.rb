@@ -18,6 +18,17 @@ RSpec.describe Game do
     player.human_player("A")
     player.human_player("A")
     player.human_player("A")
+
+    expect(player.board.board).to eq({
+      :A=>[".", ".", "X", "X", "X", "X"],
+      :B=>[".", ".", ".", ".", ".", "."],
+      :C=>[".", ".", ".", ".", ".", "."],
+      :D=>[".", ".", ".", ".", ".", "."],
+      :E=>[".", ".", ".", ".", ".", "."],
+      :F=>[".", ".", ".", ".", ".", "."],
+      :G=>[".", ".", ".", ".", ".", "."]
+      })
+
     game.column_winner
 
     expect(game.column_winner).to eq(player.human_player)
