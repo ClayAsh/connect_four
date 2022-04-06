@@ -53,6 +53,7 @@ RSpec.describe Game do
     player.human_player("A")
     player.computer_player("E")
     player.human_player("A")
+    game.diagonal_winner
 
     expect(player.board.board).to eq({
       :A=>[".", ".", "X", "X", "O", "X"],
