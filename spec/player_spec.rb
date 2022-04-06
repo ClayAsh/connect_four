@@ -63,7 +63,7 @@ RSpec.describe Player do
     end
   end
 
-  xit "tests for invalid selection" do
+  it "tests for invalid selection" do
     player = Player.new
 
     player.human_player("A")
@@ -84,9 +84,6 @@ RSpec.describe Player do
       })
 
     expect(player.human_player("A")).to eq(player.board)
-    # This test is returning "Row Full, Please try again" and puting us
-    # in vim land, so I know the invalid selection functionality is
-    #working but I'm unsure how to test for it.
   end
 
 

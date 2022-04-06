@@ -9,7 +9,7 @@ RSpec.describe Game do
     expect(game).to be_an_instance_of(Game)
   end
 
-  it "can declare a column winner" do
+  xit "can declare a #column_winner" do
     game = Game.new
     board = Board.new
     player = Player.new
@@ -18,25 +18,59 @@ RSpec.describe Game do
     player.human_player("A")
     player.human_player("A")
     player.human_player("A")
-    game.column_winner
 
-    expect(game.column_winner).to eq(human_player)
+    expect(player.board.board).to eq({
+      :A=>[".", ".", "X", "X", "X", "X"],
+      :B=>[".", ".", ".", ".", ".", "."],
+      :C=>[".", ".", ".", ".", ".", "."],
+      :D=>[".", ".", ".", ".", ".", "."],
+      :E=>[".", ".", ".", ".", ".", "."],
+      :F=>[".", ".", ".", ".", ".", "."],
+      :G=>[".", ".", ".", ".", ".", "."]
+      })
+
+    expect(game.column_winner).to eq(player.human_player)
   end
 
-  it "can declare a horizontal_winner" do
+  xit "can declare a #horizontal_winner" do
     game = Game.new
     board = Board.new
     player = Player.new
 
-    expect(player.board)
+    player.human_player("A")
+    player.human_player("B")
+    player.human_player("C")
+    player.human_player("D")
+
+    expect(game.horizontal_winner).to eq(player.human_player)
   end
 
-  it "can declare a diagonal winner" do
+  xit "can declare a #diagonal_winner" do
     game = Game.new
     board = Board.new
     player = Player.new
 
+    player.human_player("D")
+    player.human_player("C")
+    player.human_player("C")
+    player.human_player("B")
+    player.human_player("B")
+    player.human_player("B")
+    player.human_player("A")
+    player.human_player("A")
+    player.human_player("A")
+    player.human_player("A")
 
-    expect(player.board)
+    expect(player.board.board).to eq({
+      :A=>[".", ".", "X", "X", "X", "X"],
+      :B=>[".", ".", ".", "X", "X", "X"],
+      :C=>[".", ".", ".", ".", "X", "X"],
+      :D=>[".", ".", ".", ".", ".", "X"],
+      :E=>[".", ".", ".", ".", ".", "."],
+      :F=>[".", ".", ".", ".", ".", "."],
+      :G=>[".", ".", ".", ".", ".", "."]
+      })
+
+    expect(game.diagonal_winner).to eq(player.human_player)
   end
 end
