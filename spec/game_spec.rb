@@ -9,7 +9,7 @@ RSpec.describe Game do
     expect(game).to be_an_instance_of(Game)
   end
 
-  it "can declare a column winner" do
+  it "can declare a #column_winner" do
     game = Game.new
     board = Board.new
     player = Player.new
@@ -20,23 +20,29 @@ RSpec.describe Game do
     player.human_player("A")
     game.column_winner
 
-    expect(game.column_winner).to eq(human_player)
+    expect(game.column_winner).to eq(player.human_player)
   end
 
-  it "can declare a horizontal_winner" do
+  it "can declare a #horizontal_winner" do
     game = Game.new
     board = Board.new
     player = Player.new
 
-    expect(player.board)
+    player.human_player("A")
+    player.human_player("B")
+    player.human_player("C")
+    player.human_player("D")
+    game.horizontal_winner
+
+    expect(game.horizontal_winner).to eq(player.human_player)
   end
 
-  it "can declare a diagonal winner" do
+  it "can declare a #diagonal_winner" do
     game = Game.new
     board = Board.new
     player = Player.new
 
 
-    expect(player.board)
+    expect()
   end
 end
