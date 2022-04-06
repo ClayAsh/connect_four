@@ -36,7 +36,7 @@ class Game
       if %w[A B C D E F G].include?(choice)
         player.human_player(choice)
         player.board.generate_board
-        column_winner # check for win
+        #check for win
         player.computer_player
         player.board.generate_board
         #check for win
@@ -209,3 +209,4 @@ class Game
     end
   end
 end
+
