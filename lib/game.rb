@@ -24,7 +24,6 @@ class Game
       end
     end
 
-
   def turn
     player = Player.new
     42.times do # until win
@@ -92,8 +91,6 @@ class Game
     end
   end
 
-  # require 'pry'; binding.pry
-
   def horizontal_winner
     board = Board.new
     row_1 = board.board[:A][0], board.board[:B][0], board.board[:C][0], board.board[:D][0], board.board[:E][0], board.board[:F][0], board.board[:G][0]
@@ -134,7 +131,7 @@ class Game
         return "Aww, the Computer Wins!"
     end
   end
-  
+
   def diagonal_winner
     board = Board.new
     diag_1 = @board.board[:A][0], @board.board[:B][1], @board.board[:C][2], @board.board[:D][3], @board.board[:E][4], @board.board[:F][5]
