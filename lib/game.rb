@@ -1,5 +1,5 @@
-require './lib/board'
-require './lib/player'
+# require './lib/board'
+# require './lib/player'
 class Game
   attr_reader :turn, :board, :player
   def initialize
@@ -56,38 +56,64 @@ class Game
     row_6 =  @board.board[:F]
     row_7 =  @board.board[:G]
 
-    require 'pry';binding.pry
+    # require 'pry';binding.pry
       if row_1.join.include?("XXXX")
         return "Player 1 Wins!"
+
+      elsif row_1.join.include?("OOOO")
+        return "Aww, the Computer Wins!"
+
       end
 
       if row_2.join.include?("XXXX")
         return "Player 1 Wins!"
+
+      elsif row_2.join.include?("OOOO")
+        return "Aww, the Computer Wins!"
+
       end
 
       if row_3.join.include?("XXXX")
         return "Player 1 Wins!"
+
+      elsif row_3.join.include?("OOOO")
+        return "Aww, the Computer Wins!"
+
       end
 
       if row_4.join.include?("XXXX")
         return "Player 1 Wins!"
+
+      elsif row_4.join.include?("OOOO")
+        return "Aww, the Computer Wins!"
+
       end
 
       if row_5.join.include?("X X X X")
         return "Player 1 Wins!"
+
+      elsif row_5.join.include?("OOOO")
+        return "Aww, the Computer Wins!"
+
       end
 
       if row_6.join.include?("X X X X")
         return "Player 1 Wins!"
+
+      elsif row_6.join.include?("OOOO")
+        return "Aww, the Computer Wins!"
+
       end
 
       if row_7.join.include?("X X X X")
         return "Player 1 Wins!"
-      else
+
+      elsif row_7.join.include?("OOOO")
+        return "Aww, the Computer Wins!"
     end
   end
   def horizontal_winner
-    
+    @board.keys
   end
 end
 
@@ -103,5 +129,5 @@ end
   #   #puts winner
   # end
 # end
-game = Game.new
-require 'pry'; binding.pry
+# game = Game.new
+# require 'pry'; binding.pry
