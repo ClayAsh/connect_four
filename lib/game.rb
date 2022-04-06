@@ -1,5 +1,5 @@
-# require './lib/board'
-# require './lib/player'
+require './lib/board'
+require './lib/player'
 class Game
   attr_reader :turn, :board, :player
   def initialize
@@ -48,72 +48,124 @@ class Game
     end
   end
   def column_winner
-    row_1 =  @board.board[:A]
-    row_2 =  @board.board[:B]
-    row_3 =  @board.board[:C]
-    row_4 =  @board.board[:D]
-    row_5 =  @board.board[:E]
-    row_6 =  @board.board[:F]
-    row_7 =  @board.board[:G]
+    col_1 =  @board.board[:A]
+    col_2 =  @board.board[:B]
+    col_3 =  @board.board[:C]
+    col_4 =  @board.board[:D]
+    col_5 =  @board.board[:E]
+    col_6 =  @board.board[:F]
+    col_7 =  @board.board[:G]
 
     # require 'pry';binding.pry
-      if row_1.join.include?("XXXX")
+      if col_1.join.include?("XXXX")
         return "Player 1 Wins!"
 
-      elsif row_1.join.include?("OOOO")
+      elsif col_1.join.include?("OOOO")
         return "Aww, the Computer Wins!"
 
       end
 
-      if row_2.join.include?("XXXX")
+      if col_2.join.include?("XXXX")
         return "Player 1 Wins!"
 
-      elsif row_2.join.include?("OOOO")
+      elsif col_2.join.include?("OOOO")
         return "Aww, the Computer Wins!"
 
       end
 
-      if row_3.join.include?("XXXX")
+      if col_3.join.include?("XXXX")
         return "Player 1 Wins!"
 
-      elsif row_3.join.include?("OOOO")
+      elsif col_3.join.include?("OOOO")
         return "Aww, the Computer Wins!"
 
       end
 
-      if row_4.join.include?("XXXX")
+      if col_4.join.include?("XXXX")
         return "Player 1 Wins!"
 
-      elsif row_4.join.include?("OOOO")
+      elsif col_4.join.include?("OOOO")
         return "Aww, the Computer Wins!"
 
       end
 
-      if row_5.join.include?("X X X X")
+      if col_5.join.include?("X X X X")
         return "Player 1 Wins!"
 
-      elsif row_5.join.include?("OOOO")
+      elsif col_5.join.include?("OOOO")
         return "Aww, the Computer Wins!"
 
       end
 
-      if row_6.join.include?("X X X X")
+      if col_6.join.include?("X X X X")
         return "Player 1 Wins!"
 
-      elsif row_6.join.include?("OOOO")
+      elsif col_6.join.include?("OOOO")
         return "Aww, the Computer Wins!"
 
       end
 
-      if row_7.join.include?("X X X X")
+      if col_7.join.include?("X X X X")
         return "Player 1 Wins!"
 
-      elsif row_7.join.include?("OOOO")
+      elsif col_7.join.include?("OOOO")
         return "Aww, the Computer Wins!"
     end
   end
   def horizontal_winner
-    @board.keys
+    row_1 = @board.board[:A][0], @board.board[:B][0], @board.board[:C][0], @board.board[:D][0], @board.board[:E][0], @board.board[:F][0], @board.board[:G][0]
+    row_2 = @board.board[:A][1], @board.board[:B][1], @board.board[:C][1], @board.board[:D][1], @board.board[:E][1], @board.board[:F][1], @board.board[:G][1]
+    row_3 = @board.board[:A3], @board.board[:B3], @board.board[:C3], @board.board[:D3], @board.board[:E3], @board.board[:F3], @board.board[:G3]
+    row_4 = @board.board[:A4], @board.board[:B4], @board.board[:C4], @board.board[:D4], @board.board[:E4], @board.board[:F4], @board.board[:G4]
+    row_5 = @board.board[:A5], @board.board[:B5], @board.board[:C5], @board.board[:D5], @board.board[:E5], @board.board[:F5], @board.board[:G5]
+    row_6 = @board.board[:A6], @board.board[:B6], @board.board[:C6], @board.board[:D6], @board.board[:E6], @board.board[:F6], @board.board[:G6]
+
+    if row_1.join.include?("XXXX")
+      return "Player 1 Wins!"
+
+    elsif row_1.join.include?("OOOO")
+      return "Aww, the Computer Wins!"
+
+    end
+
+    if row_2.join.include?("XXXX")
+      return "Player 1 Wins!"
+
+    elsif row_2.join.include?("OOOO")
+      return "Aww, the Computer Wins!"
+
+    end
+
+    if row_3.join.include?("XXXX")
+      return "Player 1 Wins!"
+
+    elsif row_3.join.include?("OOOO")
+      return "Aww, the Computer Wins!"
+
+    end
+
+    if row_4.join.include?("XXXX")
+      return "Player 1 Wins!"
+
+    elsif row_4.join.include?("OOOO")
+      return "Aww, the Computer Wins!"
+
+    end
+
+    if row_5.join.include?("X X X X")
+      return "Player 1 Wins!"
+
+    elsif row_5.join.include?("OOOO")
+      return "Aww, the Computer Wins!"
+
+    end
+
+    if row_6.join.include?("X X X X")
+      return "Player 1 Wins!"
+
+    elsif row_6.join.include?("OOOO")
+      return "Aww, the Computer Wins!"
+  end
   end
 end
 
@@ -129,5 +181,5 @@ end
   #   #puts winner
   # end
 # end
-# game = Game.new
-# require 'pry'; binding.pry
+game = Game.new
+require 'pry'; binding.pry
